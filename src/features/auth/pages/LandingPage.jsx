@@ -101,7 +101,7 @@ const LandingPage = ({ onLoginClick }) => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {/* Tarjeta de Curso 1 */}
                             <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-primary">
-                                <img src="https://placehold.co/600x400/6366f1/FFFFFF?text=Fiscalía" alt="Fiscalia" className="w-full h-40 object-cover" />
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Fiscal%C3%ADa_General_de_la_Naci%C3%B3n_%28Colombia%29_logo.svg" alt="Logo de la Fiscalía" className="w-full h-40 object-contain p-4" />
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-white mb-2">Fiscalía General de la Nación</h3>
                                     <p className="text-gray-400 mb-4">El concurso de la Fiscalía General de la Nación es un proceso de selección por mérito mediante el cual se convocan y evalúan aspirantes para ocupar cargos de carrera en la entidad. A través de pruebas de conocimientos, competencias y habilidades, se busca garantizar la transparencia y seleccionar a los mejores profesionales para fortalecer la administración de justicia en el país.</p>
@@ -110,7 +110,7 @@ const LandingPage = ({ onLoginClick }) => {
                             </div>
                             {/* Tarjeta de Curso 2 */}
                             <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-primary">
-                                <img src="https://placehold.co/600x400/6366f1/FFFFFF?text=Contraloría" alt="Contraloria" className="w-full h-40 object-cover" />
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Contralor%C3%ADa_2.png" alt="Logo de la Contraloría" className="w-full h-40 object-contain p-4" />
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-white mb-2">Contraloría General de la República</h3>
                                     <p className="text-gray-400 mb-4">El concurso de la Contraloría General de la República es un proceso de selección por mérito que busca vincular a los mejores profesionales para fortalecer el control fiscal y la transparencia en la gestión pública del país.</p>
@@ -119,7 +119,7 @@ const LandingPage = ({ onLoginClick }) => {
                             </div>
                             {/* Tarjeta de Curso 3 */}
                             <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-primary">
-                                <img src="https://placehold.co/600x400/6366f1/FFFFFF?text=Sena" alt="sena" className="w-full h-40 object-cover" />
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Sena_Colombia_logo.svg" alt="Logo del SENA" className="w-full h-40 object-contain p-4" />
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-white mb-2">Servicio Nacional de aprendizaje</h3>
                                     <p className="text-gray-400 mb-4">El concurso del SENA es un proceso de mérito que selecciona a los mejores aspirantes para ocupar cargos de carrera en la entidad, fortaleciendo la formación profesional y el desarrollo del talento humano en Colombia.</p>
