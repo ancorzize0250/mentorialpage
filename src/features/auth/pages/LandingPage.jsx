@@ -34,7 +34,7 @@ const LandingPage = ({ onLoginClick }) => {
                             <DownloadCloud />
                             <span>Descargar App</span>
                         </a>
-                        <a href="https://wa.me/numerodetelefono" className="flex items-center space-x-2 bg-[#25D366] text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-[#20b85a] transition-transform hover:scale-105" aria-label="Contactar por WhatsApp">
+                        <a href="https://wa.me/3013587610" className="flex items-center space-x-2 bg-[#25D366] text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-[#20b85a] transition-transform hover:scale-105" aria-label="Contactar por WhatsApp">
                             <MessageSquareText size={20} />
                             <span>WhatsApp</span>
                         </a>
@@ -63,7 +63,7 @@ const LandingPage = ({ onLoginClick }) => {
                                     <DownloadCloud />
                                     <span>Descargar App</span>
                                 </a>
-                                <a href="https://wa.me/numerodetelefono" className="flex items-center justify-center space-x-2 bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#20b85a] transition-transform hover:scale-105 w-full text-center" aria-label="Contactar por WhatsApp">
+                                <a href="https://wa.me/3013587610" className="flex items-center justify-center space-x-2 bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#20b85a] transition-transform hover:scale-105 w-full text-center" aria-label="Contactar por WhatsApp">
                                     <MessageSquareText size={20} />
                                     <span>WhatsApp</span>
                                 </a>
