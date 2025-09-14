@@ -24,7 +24,10 @@ const LoginForm = ({ onLoginSuccess, onNavigateToRegister }) => {
 
   return (
     <form className="bg-gray-900 rounded-2xl shadow-lg p-8 sm:p-10 w-full max-w-md" onSubmit={handleSubmit}>
-      <h2 className="text-3xl font-bold text-center text-white mb-6">Iniciar Sesión</h2>
+      <img src="/mentoriallogo.png" alt="Mentorial Logo" className="w-40 h-40 mx-auto mb-0" />
+
+      <h2 className="text-3xl font-bold text-center text-white mb-1">Iniciar Sesión</h2>
+            
       <p className="text-gray-400 text-center mb-6">Bienvenido de nuevo.</p>
       
       {error && (

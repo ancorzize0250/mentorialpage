@@ -15,7 +15,7 @@ const LandingPage = ({ onLoginClick }) => {
                 <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                     {/* Logo */}
                     <a href="#" className="flex items-center space-x-2 text-2xl font-bold text-white">
-                        <BookOpenCheck className="text-primary" />
+                        <img src="/mentoriallogo.png" alt="Mentorial Logo" className="w-8 h-8" />
                         <span>Mentorial</span>
                     </a>
 
@@ -198,7 +198,7 @@ const LandingPage = ({ onLoginClick }) => {
             <footer className="bg-dark-bg border-t border-gray-700 py-12">
                 <div className="container mx-auto px-6 text-center">
                     <a href="#" className="flex items-center justify-center space-x-2 text-2xl font-bold text-white mb-4">
-                        <BookOpenCheck className="text-primary" />
+                        <img src="/mentoriallogo.png" alt="Mentorial Logo" className="w-8 h-8" />
                         <span>Mentorial</span>
                     </a>
                     <p className="mb-6 text-gray-400">Transformando el aprendizaje, una habilidad a la vez.</p>
