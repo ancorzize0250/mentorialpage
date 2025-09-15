@@ -197,9 +197,10 @@ const LandingPage = ({ onLoginClick }) => {
             {/* Pie de Página */}
             <footer className="bg-dark-bg border-t border-gray-700 py-12">
                 <div className="container mx-auto px-6 text-center">
-                    <a href="#" className="flex items-center justify-center space-x-2 text-2xl font-bold text-white mb-4">
-                        <img src="/mentoriallogo.png" alt="Mentorial Logo" className="w-8 h-8" />
-                        <span>Mentorial</span>
+                    <a href="#" className="flex items-center justify-center space-x-2 text-2xl font-bold text-white mb-0">
+                        {/* ⬅️ Aquí usamos 52px, que es aproximadamente el tamaño de w-13 */}
+                        <img src="/mentoriallogo.png" alt="Mentorial Logo" className="w-[150px] h-[150px]" />
+                        
                     </a>
                     <p className="mb-6 text-gray-400">Transformando el aprendizaje, una habilidad a la vez.</p>
                     <div className="flex justify-center space-x-6 mb-8 text-gray-400">
