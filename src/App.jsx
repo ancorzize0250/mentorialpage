@@ -2,14 +2,13 @@ import LoginPage from './features/auth/pages/LoginPage';
 import LandingPage from './features/auth/pages/LandingPage';
 import HomePage from './features/auth/pages/HomePage';
 import QuestionsPage from './features/auth/pages/QuestionsPage';
-//import LandingPage from './LandingPage'; // Importa el nuevo componente
 import { useState } from "react";
 
 
 const App = () => {
     const [user, setUser] = useState(null);
     const [selectedConvocatoria, setSelectedConvocatoria] = useState(null);
-    const [currentPage, setCurrentPage] = useState('landing'); // Cambia el estado inicial a 'landing'
+    const [currentPage, setCurrentPage] = useState('landing'); // Inicio de la apk es login, para web es landing
     const [successMessage, setSuccessMessage] = useState(null);
 
     const handleLoginSuccess = (userData) => {
@@ -20,7 +19,7 @@ const App = () => {
 
     const handleLogout = () => {
         setUser(null);
-        setCurrentPage('landing'); // Al cerrar sesión, regresa a la página de inicio
+        setCurrentPage('landing'); // Al cerrar sesión, regresa a la página de inicio  landing  o login
         setSelectedConvocatoria(null);
         setSuccessMessage(null);
     };

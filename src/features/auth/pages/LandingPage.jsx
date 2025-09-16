@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BookOpenCheck, DownloadCloud, MessageSquareText, Menu, Smartphone, Facebook, Twitter, Instagram, Linkedin, Rocket, Eye } from 'lucide-react';
+import { FaAndroid } from "react-icons/fa";
 
 const LandingPage = ({ onLoginClick }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,16 +22,21 @@ const LandingPage = ({ onLoginClick }) => {
 
                     {/* Menú de Navegación (Escritorio) */}
                     <ul className="hidden md:flex items-center space-x-8">
-                        <li><a href="#inicio" className="text-gray-300 hover:text-primary transition-colors">Inicio</a></li>
-                        <li><a href="#cursos" className="text-gray-300 hover:text-primary transition-colors">Simulacros</a></li>
-                        <li><a href="#mision" className="text-gray-300 hover:text-primary transition-colors">Misión</a></li>
-                        <li><a href="#vision" className="text-gray-300 hover:text-primary transition-colors">Visión</a></li>
-                        <li><a href="#contacto" className="text-gray-300 hover:text-primary transition-colors">Contacto</a></li>
+                        <li><a href="#inicio" className="text-gray-300 hover:text-purple-500 transition-colors">Inicio</a></li>
+                        <li><a href="#cursos" className="text-gray-300 hover:text-purple-500 transition-colors">Simulacros</a></li>
+                        <li><a href="#mision" className="text-gray-300 hover:text-purple-500 transition-colors">Misión</a></li>
+                        <li><a href="#vision" className="text-gray-300 hover:text-purple-500 transition-colors">Visión</a></li>
+                        <li><a href="#contacto" className="text-gray-300 hover:text-purple-500 transition-colors">Contacto</a></li>
                     </ul>
 
                     {/* Botones (Escritorio) */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <a href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" download className="flex items-center space-x-2 bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-hover transition-transform hover:scale-105">
+                        <a 
+                            href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
+                            download 
+                            className="flex items-center space-x-2 bg-purple-700 text-white px-5 py-2.5 rounded-lg font-semibold 
+                                        hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40"
+                            >
                             <DownloadCloud />
                             <span>Descargar App</span>
                         </a>
@@ -52,18 +58,28 @@ const LandingPage = ({ onLoginClick }) => {
                 {/* Menú de Navegación (Móvil) */}
                 <div className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:hidden flex-col items-center p-4 space-y-4 bg-dark-card border-t border-gray-700`}>
                     <ul className="flex flex-col items-center p-4 space-y-4 w-full">
-                        <li><a href="#inicio" className="text-gray-300 hover:text-primary">Inicio</a></li>
-                        <li><a href="#cursos" className="text-gray-300 hover:text-primary">Simulacros</a></li>
-                        <li><a href="#mision" className="text-gray-300 hover:text-primary">Misión</a></li>
-                        <li><a href="#vision" className="text-gray-300 hover:text-primary">Visión</a></li>
-                        <li><a href="#contacto" className="text-gray-300 hover:text-primary">Contacto</a></li>
+                        <li><a href="#inicio" className="text-gray-300 hover:text-purple-500">Inicio</a></li>
+                        <li><a href="#cursos" className="text-gray-300 hover:text-purple-500">Simulacros</a></li>
+                        <li><a href="#mision" className="text-gray-300 hover:text-purple-500">Misión</a></li>
+                        <li><a href="#vision" className="text-gray-300 hover:text-purple-500">Visión</a></li>
+                        <li><a href="#contacto" className="text-gray-300 hover:text-purple-500">Contacto</a></li>
                         <li className="w-full">
                             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full">
-                                <a href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" className="flex items-center justify-center space-x-2 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-transform hover:scale-105 w-full text-center">
-                                    <DownloadCloud />
+                                <a 
+                                    href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
+                                    className="flex items-center justify-center space-x-2 bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold 
+                                                hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40 w-full text-center"
+                                >
+                                    <FaAndroid size={20} />
                                     <span>Descargar App</span>
                                 </a>
-                                <a href="https://wa.me/3013587610" className="flex items-center justify-center space-x-2 bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#20b85a] transition-transform hover:scale-105 w-full text-center" aria-label="Contactar por WhatsApp">
+                                
+                                <a 
+                                    href="https://wa.me/3013587610" 
+                                    className="flex items-center justify-center space-x-2 bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold 
+                                                hover:bg-[#20b85a] transition-transform hover:scale-105 w-full text-center" 
+                                    aria-label="Contactar por WhatsApp"
+                                >
                                     <MessageSquareText size={20} />
                                     <span>WhatsApp</span>
                                 </a>
@@ -83,11 +99,21 @@ const LandingPage = ({ onLoginClick }) => {
                             Potencia tu preparación con simulacros en línea de alta calidad creados por expertos, y da el siguiente paso para ganar tu concurso de mérito
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                            <button onClick={onLoginClick} className="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-hover transition-transform hover:scale-105 shadow-lg shadow-primary/20 w-full sm:w-auto">
+                            <button 
+                                onClick={onLoginClick} 
+                                className="bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold 
+                                            hover:bg-purple-800 transition-transform hover:scale-105 
+                                            shadow-lg shadow-purple-500/40 w-full sm:w-auto"
+                                >
                                 Explorar Simulacros
                             </button>
-                            <a href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" className="bg-dark-card text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-700 transition-transform hover:scale-105 w-full sm:w-auto flex items-center justify-center gap-2">
-                                <Smartphone />
+                            <a 
+                                href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
+                                className="bg-dark-card text-white px-8 py-4 rounded-lg font-semibold 
+                                        hover:bg-gray-700 transition-transform hover:scale-105 
+                                        w-full sm:w-auto flex items-center justify-center gap-2"
+                            >
+                                <FaAndroid size={22} />
                                 <span>Descargar la App</span>
                             </a>
                         </div>
@@ -100,30 +126,30 @@ const LandingPage = ({ onLoginClick }) => {
                         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Simulacros Populares</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             {/* Tarjeta de Curso 1 */}
-                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-primary">
+                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-purple-500">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Fiscal%C3%ADa_General_de_la_Naci%C3%B3n_%28Colombia%29_logo.svg" alt="Logo de la Fiscalía" className="w-full h-40 object-contain p-4" />
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-white mb-2">Fiscalía General de la Nación</h3>
                                     <p className="text-gray-400 mb-4">El concurso de la Fiscalía General de la Nación es un proceso de selección por mérito mediante el cual se convocan y evalúan aspirantes para ocupar cargos de carrera en la entidad. A través de pruebas de conocimientos, competencias y habilidades, se busca garantizar la transparencia y seleccionar a los mejores profesionales para fortalecer la administración de justicia en el país.</p>
-                                    <a href="#" className="text-primary font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
+                                    <a href="#" className="text-purple-500 font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
                                 </div>
                             </div>
                             {/* Tarjeta de Curso 2 */}
-                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-primary">
+                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-purple-500">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Contralor%C3%ADa_2.png" alt="Logo de la Contraloría" className="w-full h-40 object-contain p-4" />
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-white mb-2">Contraloría General de la República</h3>
                                     <p className="text-gray-400 mb-4">El concurso de la Contraloría General de la República es un proceso de selección por mérito que busca vincular a los mejores profesionales para fortalecer el control fiscal y la transparencia en la gestión pública del país.</p>
-                                    <a href="#" className="text-primary font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
+                                    <a href="#" className="text-purple-500 font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
                                 </div>
                             </div>
                             {/* Tarjeta de Curso 3 */}
-                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-primary">
+                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-purple-500">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Sena_Colombia_logo.svg" alt="Logo del SENA" className="w-full h-40 object-contain p-4" />
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-white mb-2">Servicio Nacional de aprendizaje</h3>
                                     <p className="text-gray-400 mb-4">El concurso del SENA es un proceso de mérito que selecciona a los mejores aspirantes para ocupar cargos de carrera en la entidad, fortaleciendo la formación profesional y el desarrollo del talento humano en Colombia.</p>
-                                    <a href="#" className="text-primary font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
+                                    <a href="#" className="text-purple-500 font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +163,7 @@ const LandingPage = ({ onLoginClick }) => {
                             {/* Misión */}
                             <div className="text-center md:text-left">
                                 <div className="flex justify-center md:justify-start mb-4">
-                                    <div className="bg-primary/10 text-primary p-4 rounded-full">
+                                    <div className="bg-purple-500/10 text-purple-500 p-4 rounded-full">
                                         <Rocket className="w-8 h-8" />
                                     </div>
                                 </div>
@@ -149,7 +175,7 @@ const LandingPage = ({ onLoginClick }) => {
                             {/* Visión */}
                             <div id="vision" className="text-center md:text-left">
                                 <div className="flex justify-center md:justify-start mb-4">
-                                    <div className="bg-primary/10 text-primary p-4 rounded-full">
+                                    <div className="bg-purple-500/10 text-purple-500 p-4 rounded-full">
                                         <Eye className="w-8 h-8" />
                                     </div>
                                 </div>
@@ -173,18 +199,18 @@ const LandingPage = ({ onLoginClick }) => {
                             <form onSubmit={(e) => e.preventDefault()}>
                                 <div className="mb-6">
                                     <label htmlFor="name" className="block text-gray-300 font-semibold mb-2">Nombre</label>
-                                    <input type="text" id="name" name="name" className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Tu nombre completo" required />
+                                    <input type="text" id="name" name="name" className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="Tu nombre completo" required />
                                 </div>
                                 <div className="mb-6">
                                     <label htmlFor="email" className="block text-gray-300 font-semibold mb-2">Correo Electrónico</label>
-                                    <input type="email" id="email" name="email" className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" placeholder="tu@email.com" required />
+                                    <input type="email" id="email" name="email" className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="tu@email.com" required />
                                 </div>
                                 <div className="mb-6">
                                     <label htmlFor="message" className="block text-gray-300 font-semibold mb-2">Mensaje</label>
-                                    <textarea id="message" name="message" rows="5" className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                                    <textarea id="message" name="message" rows="5" className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="Escribe tu mensaje aquí..." required></textarea>
                                 </div>
                                 <div className="text-center">
-                                    <button type="submit" className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors w-full">
+                                    <button type="submit" className="bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-800 transition-colors w-full shadow-lg shadow-purple-500/40">
                                         Enviar Mensaje
                                     </button>
                                 </div>
@@ -198,16 +224,14 @@ const LandingPage = ({ onLoginClick }) => {
             <footer className="bg-dark-bg border-t border-gray-700 py-12">
                 <div className="container mx-auto px-6 text-center">
                     <a href="#" className="flex items-center justify-center space-x-2 text-2xl font-bold text-white mb-0">
-                        {/* ⬅️ Aquí usamos 52px, que es aproximadamente el tamaño de w-13 */}
                         <img src="/mentoriallogo.png" alt="Mentorial Logo" className="w-[150px] h-[150px]" />
-                        
                     </a>
                     <p className="mb-6 text-gray-400">Transformando el aprendizaje, una habilidad a la vez.</p>
                     <div className="flex justify-center space-x-6 mb-8 text-gray-400">
-                        <a href="#" className="hover:text-primary"><Facebook /></a>
-                        <a href="#" className="hover:text-primary"><Twitter /></a>
-                        <a href="#" className="hover:text-primary"><Instagram /></a>
-                        <a href="#" className="hover:text-primary"><Linkedin /></a>
+                        <a href="#" className="hover:text-purple-500"><Facebook /></a>
+                        <a href="#" className="hover:text-purple-500"><Twitter /></a>
+                        <a href="#" className="hover:text-purple-500"><Instagram /></a>
+                        <a href="#" className="hover:text-purple-500"><Linkedin /></a>
                     </div>
                     <p className="text-gray-500">&copy; 2025 Mentorial. Todos los derechos reservados.</p>
                 </div>
