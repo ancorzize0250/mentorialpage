@@ -24,8 +24,10 @@ const LandingPage = ({ onLoginClick }) => {
                     <ul className="hidden md:flex items-center space-x-8">
                         <li><a href="#inicio" className="text-gray-300 hover:text-purple-500 transition-colors">Inicio</a></li>
                         <li><a href="#cursos" className="text-gray-300 hover:text-purple-500 transition-colors">Simulacros</a></li>
+                        <li><a href="#acerca" className="text-gray-300 hover:text-purple-500 transition-colors">Acerca de la App</a></li>
                         <li><a href="#mision" className="text-gray-300 hover:text-purple-500 transition-colors">Misión</a></li>
                         <li><a href="#vision" className="text-gray-300 hover:text-purple-500 transition-colors">Visión</a></li>
+                        <li><a href="#planes" className="text-gray-300 hover:text-purple-500 transition-colors">Planes</a></li>
                         <li><a href="#contacto" className="text-gray-300 hover:text-purple-500 transition-colors">Contacto</a></li>
                     </ul>
 
@@ -35,7 +37,7 @@ const LandingPage = ({ onLoginClick }) => {
                             href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
                             download 
                             className="flex items-center space-x-2 bg-purple-700 text-white px-5 py-2.5 rounded-lg font-semibold 
-                                        hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40"
+                                     hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40"
                             >
                             <DownloadCloud />
                             <span>Descargar App</span>
@@ -60,15 +62,17 @@ const LandingPage = ({ onLoginClick }) => {
                     <ul className="flex flex-col items-center p-4 space-y-4 w-full">
                         <li><a href="#inicio" className="text-gray-300 hover:text-purple-500">Inicio</a></li>
                         <li><a href="#cursos" className="text-gray-300 hover:text-purple-500">Simulacros</a></li>
+                        <li><a href="#acerca" className="text-gray-300 hover:text-purple-500">Acerca de la App</a></li>
                         <li><a href="#mision" className="text-gray-300 hover:text-purple-500">Misión</a></li>
                         <li><a href="#vision" className="text-gray-300 hover:text-purple-500">Visión</a></li>
+                        <li><a href="#planes" className="text-gray-300 hover:text-purple-500">Planes</a></li>
                         <li><a href="#contacto" className="text-gray-300 hover:text-purple-500">Contacto</a></li>
                         <li className="w-full">
                             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full">
                                 <a 
                                     href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
                                     className="flex items-center justify-center space-x-2 bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold 
-                                                hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40 w-full text-center"
+                                             hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40 w-full text-center"
                                 >
                                     <FaAndroid size={20} />
                                     <span>Descargar App</span>
@@ -77,7 +81,7 @@ const LandingPage = ({ onLoginClick }) => {
                                 <a 
                                     href="https://wa.me/3013587610" 
                                     className="flex items-center justify-center space-x-2 bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold 
-                                                hover:bg-[#20b85a] transition-transform hover:scale-105 w-full text-center" 
+                                             hover:bg-[#20b85a] transition-transform hover:scale-105 w-full text-center" 
                                     aria-label="Contactar por WhatsApp"
                                 >
                                     <MessageSquareText size={20} />
@@ -102,16 +106,16 @@ const LandingPage = ({ onLoginClick }) => {
                             <button 
                                 onClick={onLoginClick} 
                                 className="bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold 
-                                            hover:bg-purple-800 transition-transform hover:scale-105 
-                                            shadow-lg shadow-purple-500/40 w-full sm:w-auto"
+                                         hover:bg-purple-800 transition-transform hover:scale-105 
+                                         shadow-lg shadow-purple-500/40 w-full sm:w-auto"
                                 >
                                 Explorar Simulacros
                             </button>
                             <a 
                                 href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
                                 className="bg-dark-card text-white px-8 py-4 rounded-lg font-semibold 
-                                        hover:bg-gray-700 transition-transform hover:scale-105 
-                                        w-full sm:w-auto flex items-center justify-center gap-2"
+                                         hover:bg-gray-700 transition-transform hover:scale-105 
+                                         w-full sm:w-auto flex items-center justify-center gap-2"
                             >
                                 <FaAndroid size={22} />
                                 <span>Descargar la App</span>
@@ -155,9 +159,40 @@ const LandingPage = ({ onLoginClick }) => {
                         </div>
                     </div>
                 </section>
-
+                
+                {/* Sección: Acerca de la App */}
+                <section id="acerca" className="py-20 bg-dark-card">
+                    <div className="container mx-auto px-6">
+                        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Acerca de la App</h2>
+                        <div className="max-w-4xl mx-auto text-center md:text-left">
+                            <h3 className="text-2xl font-bold text-white mb-4">Tu Futuro Profesional Comienza Aquí.</h3>
+                            <p className="text-gray-400 leading-relaxed mb-6">
+                                En Mentorial, te ayudamos a prepararte para los concursos de mérito con una metodología que va más allá de la memorización. Nuestra app, disponible en versión web y móvil, te permite simular las pruebas de manera efectiva.
+                            </p>
+                            <p className="text-lg font-semibold text-purple-400 mb-2">¿Cómo Funciona?</p>
+                            <ul className="list-disc list-inside space-y-4 text-gray-400">
+                                <li>
+                                    <span className="font-bold text-white">Contexto y Análisis:</span> Cada simulacro comienza con una introducción detallada. Este "encabezado" te proporciona el contexto necesario para comprender y analizar las preguntas que vienen a continuación. Esto imita la estructura de las pruebas reales, donde la comprensión lectora y el análisis de la información son cruciales.
+                                </li>
+                                <li>
+                                    <span className="font-bold text-white">Preguntas y Respuestas en Tiempo Real:</span> A medida que avanzas, la aplicación te presenta preguntas relacionadas con el encabezado. Al seleccionar una opción, recibes retroalimentación inmediata. Sabrás al instante si tu respuesta es correcta o incorrecta. Esto te permite corregir errores y reforzar conceptos al momento.
+                                </li>
+                                <li>
+                                    <span className="font-bold text-white">Análisis de la Respuesta Correcta:</span> Lo más importante es el análisis. Después de cada pregunta, la aplicación te muestra la respuesta correcta y una explicación detallada de por qué esa es la opción adecuada. Este paso es fundamental para que no solo memorices, sino que realmente comprendas los temas.
+                                </li>
+                                <li>
+                                    <span className="font-bold text-white">Acceso Flexible:</span> Nuestra aplicación está diseñada para que estudies en cualquier momento y lugar. Ya sea desde la comodidad de tu casa en la versión web o en tus trayectos diarios con la aplicación móvil, Mentorial se adapta a tu ritmo de vida.
+                                </li>
+                                <li>
+                                    <span className="font-bold text-white">Práctica Ilimitada:</span> Una vez que adquieres un paquete, tienes acceso a simulacros que puedes repetir infinitas veces. Esta práctica constante te ayuda a dominar el temario y a reducir la ansiedad frente a la prueba real.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
                 {/* Sección de Misión y Visión */}
-                <section id="mision" className="py-20">
+                <section id="mision" className="py-20 bg-dark-bg">
                     <div className="container mx-auto px-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                             {/* Misión */}
@@ -187,15 +222,61 @@ const LandingPage = ({ onLoginClick }) => {
                         </div>
                     </div>
                 </section>
+                
+                {/* Nueva Sección: Planes y Métodos de Pago */}
+                <section id="planes" className="py-20">
+                    <div className="container mx-auto px-6 text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Planes y Métodos de Pago</h2>
+                        <div className="bg-dark-card rounded-lg shadow-lg p-8 md:p-10 border border-gray-700 max-w-2xl mx-auto">
+                            <p className="text-lg md:text-xl text-gray-400 mb-6">
+                                Con Mentorial, obtienes acceso ilimitado a nuestros simulacros de alta calidad.
+                            </p>
+                            <div className="bg-purple-700 text-white p-4 rounded-lg mb-6 shadow-md">
+                                <h3 className="text-2xl font-bold">
+                                    Precio por Paquete: **$39.900 COP**
+                                </h3>
+                                <p className="text-sm mt-1">¡**Promoción válida hasta el 29 de septiembre**!</p>
+                            </div>
+                            
+                            <h4 className="text-lg font-semibold text-white mb-4">Métodos de Pago:</h4>
+                            <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
+                                <div className="bg-gray-800 p-4 rounded-lg flex-1">
+                                    <h5 className="font-bold text-purple-400 mb-1">Nequi</h5>
+                                    <p className="text-white">**3115108204**</p>
+                                </div>
+                                <div className="bg-gray-800 p-4 rounded-lg flex-1">
+                                    <h5 className="font-bold text-purple-400 mb-1">Bancolombia Ahorros</h5>
+                                    <p className="text-white">**2323243434**</p>
+                                </div>
+                            </div>
+                            
+                            <p className="text-gray-400 leading-relaxed mb-6">
+                                Una vez realizado el pago, por favor envía la confirmación de la transacción a nuestro WhatsApp para la activación de tu cuenta.
+                            </p>
+                            
+                            <a href="https://wa.me/3145566765" className="bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#20b85a] transition-colors flex items-center justify-center space-x-2 w-full md:w-auto mx-auto shadow-lg">
+                                <MessageSquareText size={20} />
+                                <span>Activar mi Cuenta (WhatsApp)</span>
+                            </a>
+                            
+                            <div className="mt-8 pt-6 border-t border-gray-700">
+                                <h4 className="text-lg font-semibold text-white mb-2">Versión Gratuita para Empezar</h4>
+                                <p className="text-gray-400 leading-relaxed">
+                                    ¿Quieres probarlo antes de comprar? Nuestra plataforma te ofrece preguntas y simulacros gratuitos para que experimentes de primera mano nuestra metodología. De esta manera, puedes evaluar la calidad de nuestro contenido y el valor que te ofrecemos en tu preparación.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Sección de Contacto */}
-                <section id="contacto" className="py-20 bg-dark-card">
+                <section id="contacto" className="py-20 bg-dark-bg">
                     <div className="container mx-auto px-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">Ponte en Contacto</h2>
                         <p className="text-lg text-gray-400 text-center max-w-2xl mx-auto mb-12">
                             ¿Tienes alguna pregunta o quieres colaborar con nosotros? Envíanos un mensaje y te responderemos lo antes posible.
                         </p>
-                        <div className="max-w-xl mx-auto bg-dark-bg p-8 rounded-lg border border-gray-700">
+                        <div className="max-w-xl mx-auto bg-dark-card p-8 rounded-lg border border-gray-700">
                             <form onSubmit={(e) => e.preventDefault()}>
                                 <div className="mb-6">
                                     <label htmlFor="name" className="block text-gray-300 font-semibold mb-2">Nombre</label>

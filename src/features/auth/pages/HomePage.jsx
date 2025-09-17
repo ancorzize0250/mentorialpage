@@ -38,7 +38,7 @@ const HomePage = ({ user, onLogout, onConvocatoriaSelect }) => {
             </header>
 
             <div className="w-full max-w-2xl text-center mb-6 md:mb-8">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Plataforma de Cursos</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Prepárate con Mentorial</h2>
                 <p className="text-gray-400 text-sm sm:text-base">Busca y encuentra las convocatorias de tu interés.</p>
             </div>
 
