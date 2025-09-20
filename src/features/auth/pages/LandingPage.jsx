@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BookOpenCheck, DownloadCloud, Menu, Smartphone, Facebook, Twitter, Instagram, Linkedin, Rocket, Eye } from 'lucide-react';
-import { FaAndroid, FaWhatsapp } from "react-icons/fa"; // Importación de FaWhatsapp
+import { FaAndroid, FaWhatsapp } from "react-icons/fa";
 import sendContactEmail from '../../../api/sendContactEmailService';
+import getConvocatorias from '../../../api/getConvocatoriasService'; 
 
 const LandingPage = ({ onLoginClick }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+    const [convocatorias, setConvocatorias] = useState([]); 
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -14,6 +15,18 @@ const LandingPage = ({ onLoginClick }) => {
     const [loading, setLoading] = useState(false);
     const [feedback, setFeedback] = useState(null);
 
+    useEffect(() => {
+        const fetchConvocatorias = async () => {
+            const result = await getConvocatorias();
+            if (result.success) {
+                setConvocatorias(result.convocatorias);
+            } else {
+                console.error(result.message);
+            }
+        };
+
+        fetchConvocatorias();
+    }, []);
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -24,7 +37,7 @@ const LandingPage = ({ onLoginClick }) => {
         setFormData({ ...formData, [name]: value });
     };
 
-     const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setFeedback(null);
@@ -33,7 +46,7 @@ const LandingPage = ({ onLoginClick }) => {
 
         if (result.success) {
             setFeedback({ type: "success", message: result.message });
-            setFormData({ name: "", email: "", message: "" }); // limpiar campos
+            setFormData({ name: "", email: "", message: "" });
         } else {
             setFeedback({ type: "error", message: result.message });
         }
@@ -48,8 +61,10 @@ const LandingPage = ({ onLoginClick }) => {
                 <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                     {/* Logo */}
                     <a href="#" className="flex items-center space-x-2 text-2xl font-bold text-white">
-                        <img src="/mentoriallogo.png" alt="Mentorial Logo" className="w-8 h-8" />
-                        <span>Mentorial</span>
+                        <span>
+                            <span className="text-purple-600">M</span>
+                            <span className="text-white">entorial</span>
+                        </span>
                     </a>
 
                     {/* Menú de Navegación (Escritorio) */}
@@ -69,13 +84,13 @@ const LandingPage = ({ onLoginClick }) => {
                             href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
                             download 
                             className="flex items-center space-x-2 bg-purple-700 text-white px-5 py-2.5 rounded-lg font-semibold 
-                                      hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40"
-                            >
+                                     hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40"
+                        >
                             <DownloadCloud />
                             <span>Descargar App</span>
                         </a>
                         <a href="https://wa.me/3013587610" className="flex items-center space-x-2 bg-[#25D366] text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-[#20b85a] transition-transform hover:scale-105" aria-label="Contactar por WhatsApp">
-                            <FaWhatsapp size={20} /> {/* Ícono de WhatsApp cambiado */}
+                            <FaWhatsapp size={20} />
                             <span>WhatsApp</span>
                         </a>
                         <button onClick={onLoginClick} className="flex items-center space-x-2 bg-white text-gray-800 px-5 py-2.5 rounded-lg font-semibold hover:bg-gray-200 transition-transform hover:scale-105">
@@ -104,7 +119,7 @@ const LandingPage = ({ onLoginClick }) => {
                                 <a 
                                     href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
                                     className="flex items-center justify-center space-x-2 bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold 
-                                               hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40 w-full text-center"
+                                             hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40 w-full text-center"
                                 >
                                     <FaAndroid size={20} />
                                     <span>Descargar App</span>
@@ -113,10 +128,10 @@ const LandingPage = ({ onLoginClick }) => {
                                 <a 
                                     href="https://wa.me/3013587610" 
                                     className="flex items-center justify-center space-x-2 bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold 
-                                               hover:bg-[#20b85a] transition-transform hover:scale-105 w-full text-center" 
+                                             hover:bg-[#20b85a] transition-transform hover:scale-105 w-full text-center" 
                                     aria-label="Contactar por WhatsApp"
                                 >
-                                    <FaWhatsapp size={20} /> {/* Ícono de WhatsApp cambiado */}
+                                    <FaWhatsapp size={20} />
                                     <span>WhatsApp</span>
                                 </a>
                             </div>
@@ -138,16 +153,16 @@ const LandingPage = ({ onLoginClick }) => {
                             <button 
                                 onClick={onLoginClick} 
                                 className="bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold 
-                                            hover:bg-purple-800 transition-transform hover:scale-105 
-                                            shadow-lg shadow-purple-500/40 w-full sm:w-auto"
-                                >
+                                         hover:bg-purple-800 transition-transform hover:scale-105 
+                                         shadow-lg shadow-purple-500/40 w-full sm:w-auto"
+                            >
                                 Explorar Simulacros
                             </button>
                             <a 
                                 href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
                                 className="bg-dark-card text-white px-8 py-4 rounded-lg font-semibold 
-                                            hover:bg-gray-700 transition-transform hover:scale-105 
-                                            w-full sm:w-auto flex items-center justify-center gap-2"
+                                         hover:bg-gray-700 transition-transform hover:scale-105 
+                                         w-full sm:w-auto flex items-center justify-center gap-2"
                             >
                                 <FaAndroid size={22} />
                                 <span>Descargar la App</span>
@@ -161,42 +176,35 @@ const LandingPage = ({ onLoginClick }) => {
                     <div className="container mx-auto px-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Simulacros Populares</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {/* Tarjeta de Curso 1 */}
-                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-purple-500">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Fiscal%C3%ADa_General_de_la_Naci%C3%B3n_%28Colombia%29_logo.svg" alt="Logo de la Fiscalía" className="w-full h-40 object-contain p-4" />
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-white mb-2">Fiscalía General de la Nación</h3>
-                                    <p className="text-gray-400 mb-4">El concurso de la Fiscalía General de la Nación es un proceso de selección por mérito mediante el cual se convocan y evalúan aspirantes para ocupar cargos de carrera en la entidad. A través de pruebas de conocimientos, competencias y habilidades, se busca garantizar la transparencia y seleccionar a los mejores profesionales para fortalecer la administración de justicia en el país.</p>
-                                    <a href="#" className="text-purple-500 font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
-                                </div>
-                            </div>
-                            {/* Tarjeta de Curso 2 */}
-                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-purple-500">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Contralor%C3%ADa_2.png" alt="Logo de la Contraloría" className="w-full h-40 object-contain p-4" />
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-white mb-2">Contraloría General de la República</h3>
-                                    <p className="text-gray-400 mb-4">El concurso de la Contraloría General de la República es un proceso de selección por mérito que busca vincular a los mejores profesionales para fortalecer el control fiscal y la transparencia en la gestión pública del país.</p>
-                                    <a href="#" className="text-purple-500 font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
-                                </div>
-                            </div>
-                            {/* Tarjeta de Curso 3 */}
-                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-purple-500">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Sena_Colombia_logo.svg" alt="Logo del SENA" className="w-full h-40 object-contain p-4" />
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-white mb-2">Servicio Nacional de aprendizaje</h3>
-                                    <p className="text-gray-400 mb-4">El concurso del SENA es un proceso de mérito que selecciona a los mejores aspirantes para ocupar cargos de carrera en la entidad, fortaleciendo la formación profesional y el desarrollo del talento humano en Colombia.</p>
-                                    <a href="#" className="text-purple-500 font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
-                                </div>
-                            </div>
-                            {/* Tarjeta de Curso 4 */}
-                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-purple-500">
-                                <img src="https://www.registraduria.gov.co/squelettes/images/assetsNewTrip/fondos_oscuros.svg" alt="Logo del SENA" className="w-full h-40 object-contain p-4" />
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-white mb-2">Registraduría Nacional de Colombia</h3>
-                                    <p className="text-gray-400 mb-4">El Concurso Abierto de Méritos 2025 de la Registraduría Nacional abrió inscripciones el 1 de marzo de 2025 y busca proveer miles de cargos de carrera administrativa en diferentes niveles (profesional, técnico y asistencial). Está organizado por la CNSC, con pruebas de conocimientos, competencias y valoración de antecedentes. El objetivo es garantizar el ingreso por mérito a la planta de personal de la Registraduría en todo el país.</p>
-                                    <a href="#" className="text-purple-500 font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
-                                </div>
-                            </div>
+                            {/* <-- Mapeo dinámico de las convocatorias */}
+                            {convocatorias.length > 0 ? (
+                                convocatorias.map((convocatoria) => {
+                                // Validación adicional para asegurar que 'convocatoria' no es null o undefined
+                                if (!convocatoria) {
+                                    return null; // Si es nulo, no renderiza nada para este elemento
+                                }
+                                
+                                return (
+                                    <div 
+                                        key={convocatoria.id} 
+                                        className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-purple-500"
+                                    >
+                                        <img 
+                                            src={convocatoria.logotipo || 'URL_DE_IMAGEN_POR_DEFECTO'} 
+                                            alt={`Logo de ${convocatoria.nombre}`} 
+                                            className="w-full h-40 object-contain p-4" 
+                                        />
+                                        <div className="p-6">
+                                            <h3 className="text-xl font-bold text-white mb-2">{convocatoria.nombre}</h3>
+                                            <p className="text-gray-400 mb-4">{convocatoria.descripcion}</p>
+                                            <a href={convocatoria.enlace || '#'} target="_blank" rel="noopener noreferrer" className="text-purple-500 font-semibold hover:underline">Ver detalles de la convocatoria &rarr;</a>
+                                        </div>
+                                    </div>
+                                );
+                            })
+                            ) : (
+                                <p className="text-center text-gray-400 col-span-full">Cargando simulacros...</p>
+                            )}
                         </div>
                     </div>
                 </section>
@@ -296,7 +304,7 @@ const LandingPage = ({ onLoginClick }) => {
                             </p>
                             
                             <a href="https://wa.me/3145566765" className="bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#20b85a] transition-colors flex items-center justify-center space-x-2 w-full md:w-auto mx-auto shadow-lg">
-                                <FaWhatsapp size={20} /> {/* Ícono de WhatsApp cambiado */}
+                                <FaWhatsapp size={20} />
                                 <span>Activar mi Cuenta (WhatsApp)</span>
                             </a>
                             
