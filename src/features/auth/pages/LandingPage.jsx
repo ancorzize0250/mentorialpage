@@ -216,7 +216,7 @@ const LandingPage = ({ onLoginClick }) => {
                         <div className="max-w-4xl mx-auto text-center md:text-left">
                             <h3 className="text-2xl font-bold text-white mb-4">Tu Futuro Profesional Comienza Aquí.</h3>
                             <p className="text-gray-400 leading-relaxed mb-6">
-                                En Mentorial, te ayudamos a prepararte para los concursos de mérito con una metodología que va más allá de la memorización. Nuestra app, disponible en versión web y móvil, te permite simular las pruebas de manera efectiva.
+                                En Mentorial, te ayudamos a prepararte para los concursos de mérito con una metodología que va más allá de la memorización. Nuestra app con 600 preguntas, disponible en versión web y móvil, te permite estudiar las pruebas de manera efectiva.
                             </p>
                             <p className="text-lg font-semibold text-purple-400 mb-2">¿Cómo Funciona?</p>
                             <ul className="list-disc list-inside space-y-4 text-gray-400">
@@ -224,7 +224,7 @@ const LandingPage = ({ onLoginClick }) => {
                                     <span className="font-bold text-white">Contexto y Análisis:</span> Cada simulacro comienza con una introducción detallada. Este "encabezado" te proporciona el contexto necesario para comprender y analizar las preguntas que vienen a continuación. Esto imita la estructura de las pruebas reales, donde la comprensión lectora y el análisis de la información son cruciales.
                                 </li>
                                 <li>
-                                    <span className="font-bold text-white">Preguntas y Respuestas en Tiempo Real:</span> A medida que avanzas, la aplicación te presenta preguntas relacionadas con el encabezado. Al seleccionar una opción, recibes retroalimentación inmediata. Sabrás al instante si tu respuesta es correcta o incorrecta. Esto te permite corregir errores y reforzar conceptos al momento.
+                                    <span className="font-bold text-white">Preguntas y Respuestas en Tiempo Real:</span> A medida que avanzas, la aplicación te presenta preguntas relacionadas con el encabezado, el total de preguntas son 600 por convocatoria. Al seleccionar una opción, recibes retroalimentación inmediata. Sabrás al instante si tu respuesta es correcta o incorrecta. Esto te permite corregir errores y reforzar conceptos al momento.
                                 </li>
                                 <li>
                                     <span className="font-bold text-white">Análisis de la Respuesta Correcta:</span> Lo más importante es el análisis. Después de cada pregunta, la aplicación te muestra la respuesta correcta y una explicación detallada de por qué esa es la opción adecuada. Este paso es fundamental para que no solo memorices, sino que realmente comprendas los temas.
