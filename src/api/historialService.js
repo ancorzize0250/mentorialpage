@@ -27,3 +27,31 @@ export const getRespuestasByConvocatoria = async (userId, convocatoriaId) => {
         throw error;
     }
 };
+
+export const deleteHistorial = async (userId, convocatoriaId) => {
+    try {
+        const response = await fetch(`${BASE_URL}/api/eliminarhistorico`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id_usuario: userId,
+                id_convocatoria: convocatoriaId
+            }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            console.error('Error al eliminar:', data.message);
+            return { status: 'error', message: data.message || 'Error desconocido' };
+        }
+
+        return data;
+
+    } catch (error) {
+        console.error("Error en la solicitud de eliminación:", error);
+        return { status: 'error', message: 'Error de red o del servidor' };
+    }
+};

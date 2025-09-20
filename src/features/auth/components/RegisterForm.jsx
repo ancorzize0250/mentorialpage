@@ -82,10 +82,11 @@ const RegisterForm = ({ onRegisterSuccess, onNavigateToLogin }) => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
             />
-
-            <Button onClick={handleRegister} disabled={isLoading}>
-                {isLoading ? 'Creando cuenta...' : 'Crear Cuenta'}
-            </Button>
+            <div className="mt-6">
+                <Button onClick={handleRegister} disabled={isLoading}>
+                    {isLoading ? 'Creando cuenta...' : 'Crear Cuenta'}
+                </Button>
+            </div>
         </form>
     );
 };

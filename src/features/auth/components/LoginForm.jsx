@@ -51,9 +51,11 @@ const LoginForm = ({ onLoginSuccess, onNavigateToRegister }) => {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <Button onClick={handleLogin} disabled={isLoading}>
-        {isLoading ? 'Iniciando...' : 'Iniciar Sesión'}
-      </Button>
+      <div className="mt-6"> 
+        <Button onClick={handleLogin} disabled={isLoading}>
+          {isLoading ? 'Iniciando...' : 'Iniciar Sesión'}
+        </Button>
+      </div>
 
       <div className="mt-6 text-center">
         <p className="text-gray-400">¿Aún no tienes una cuenta?</p>
