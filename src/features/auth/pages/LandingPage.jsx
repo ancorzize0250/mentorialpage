@@ -291,10 +291,14 @@ const LandingPage = ({ onLoginClick }) => {
                             <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
                                 <div className="bg-gray-800 p-4 rounded-lg flex-1">
                                     <h5 className="font-bold text-purple-400 mb-1">Nequi</h5>
-                                    <p className="text-white">**3205016566**</p>
+                                    <p className="text-white">**3147888224**</p>
                                 </div>
                                 <div className="bg-gray-800 p-4 rounded-lg flex-1">
                                     <h5 className="font-bold text-purple-400 mb-1">Bancolombia Ahorros</h5>
+                                    <p className="text-white">**23619356454**</p>
+                                </div>
+                                <div className="bg-gray-800 p-4 rounded-lg flex-1">
+                                    <h5 className="font-bold text-purple-400 mb-1">Daviplata</h5>
                                     <p className="text-white">**23619356454**</p>
                                 </div>
                             </div>
@@ -396,8 +400,7 @@ const LandingPage = ({ onLoginClick }) => {
                     </a>
                     <p className="mb-6 text-gray-400">Transformando el aprendizaje, una habilidad a la vez.</p>
                     <div className="flex justify-center space-x-6 mb-8 text-gray-400">
-                        <a href="#" className="hover:text-purple-500"><Facebook /></a>
-                        <a href="#" className="hover:text-purple-500"><Twitter /></a>
+                        <a href="https://www.facebook.com/profile.php?id=61581187410299" className="hover:text-purple-500"><Facebook /></a>
                         <a href="#" className="hover:text-purple-500"><Instagram /></a>
                         <a href="#" className="hover:text-purple-500"><Linkedin /></a>
                     </div>
