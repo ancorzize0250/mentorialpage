@@ -1,8 +1,6 @@
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
 
-
-
 const LoginPage = ({ page, onLoginSuccess, onRegisterSuccess, onNavigateToLogin, onNavigateToRegister, successMessage }) => (
      <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center p-4">
       {successMessage && page === 'login' && (

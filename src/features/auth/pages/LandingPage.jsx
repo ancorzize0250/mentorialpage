@@ -1,12 +1,44 @@
 import React, { useState } from 'react';
-import { BookOpenCheck, DownloadCloud, MessageSquareText, Menu, Smartphone, Facebook, Twitter, Instagram, Linkedin, Rocket, Eye } from 'lucide-react';
-import { FaAndroid } from "react-icons/fa";
+import { BookOpenCheck, DownloadCloud, Menu, Smartphone, Facebook, Twitter, Instagram, Linkedin, Rocket, Eye } from 'lucide-react';
+import { FaAndroid, FaWhatsapp } from "react-icons/fa"; // Importación de FaWhatsapp
+import sendContactEmail from '../../../api/sendContactEmailService';
 
 const LandingPage = ({ onLoginClick }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
+    const [loading, setLoading] = useState(false);
+    const [feedback, setFeedback] = useState(null);
+
+
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+     const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setFeedback(null);
+
+        const result = await sendContactEmail(formData);
+
+        if (result.success) {
+            setFeedback({ type: "success", message: result.message });
+            setFormData({ name: "", email: "", message: "" }); // limpiar campos
+        } else {
+            setFeedback({ type: "error", message: result.message });
+        }
+
+        setLoading(false);
     };
 
     return (
@@ -37,13 +69,13 @@ const LandingPage = ({ onLoginClick }) => {
                             href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
                             download 
                             className="flex items-center space-x-2 bg-purple-700 text-white px-5 py-2.5 rounded-lg font-semibold 
-                                     hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40"
+                                      hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40"
                             >
                             <DownloadCloud />
                             <span>Descargar App</span>
                         </a>
                         <a href="https://wa.me/3013587610" className="flex items-center space-x-2 bg-[#25D366] text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-[#20b85a] transition-transform hover:scale-105" aria-label="Contactar por WhatsApp">
-                            <MessageSquareText size={20} />
+                            <FaWhatsapp size={20} /> {/* Ícono de WhatsApp cambiado */}
                             <span>WhatsApp</span>
                         </a>
                         <button onClick={onLoginClick} className="flex items-center space-x-2 bg-white text-gray-800 px-5 py-2.5 rounded-lg font-semibold hover:bg-gray-200 transition-transform hover:scale-105">
@@ -72,7 +104,7 @@ const LandingPage = ({ onLoginClick }) => {
                                 <a 
                                     href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
                                     className="flex items-center justify-center space-x-2 bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold 
-                                             hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40 w-full text-center"
+                                               hover:bg-purple-800 transition-transform hover:scale-105 shadow-lg shadow-purple-500/40 w-full text-center"
                                 >
                                     <FaAndroid size={20} />
                                     <span>Descargar App</span>
@@ -81,10 +113,10 @@ const LandingPage = ({ onLoginClick }) => {
                                 <a 
                                     href="https://wa.me/3013587610" 
                                     className="flex items-center justify-center space-x-2 bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold 
-                                             hover:bg-[#20b85a] transition-transform hover:scale-105 w-full text-center" 
+                                               hover:bg-[#20b85a] transition-transform hover:scale-105 w-full text-center" 
                                     aria-label="Contactar por WhatsApp"
                                 >
-                                    <MessageSquareText size={20} />
+                                    <FaWhatsapp size={20} /> {/* Ícono de WhatsApp cambiado */}
                                     <span>WhatsApp</span>
                                 </a>
                             </div>
@@ -106,16 +138,16 @@ const LandingPage = ({ onLoginClick }) => {
                             <button 
                                 onClick={onLoginClick} 
                                 className="bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold 
-                                         hover:bg-purple-800 transition-transform hover:scale-105 
-                                         shadow-lg shadow-purple-500/40 w-full sm:w-auto"
+                                            hover:bg-purple-800 transition-transform hover:scale-105 
+                                            shadow-lg shadow-purple-500/40 w-full sm:w-auto"
                                 >
                                 Explorar Simulacros
                             </button>
                             <a 
                                 href="https://github.com/ancorzize0250/MentorialAPP/releases/download/v1.0/mentorial.apk" 
                                 className="bg-dark-card text-white px-8 py-4 rounded-lg font-semibold 
-                                         hover:bg-gray-700 transition-transform hover:scale-105 
-                                         w-full sm:w-auto flex items-center justify-center gap-2"
+                                            hover:bg-gray-700 transition-transform hover:scale-105 
+                                            w-full sm:w-auto flex items-center justify-center gap-2"
                             >
                                 <FaAndroid size={22} />
                                 <span>Descargar la App</span>
@@ -153,6 +185,15 @@ const LandingPage = ({ onLoginClick }) => {
                                 <div className="p-6">
                                     <h3 className="text-xl font-bold text-white mb-2">Servicio Nacional de aprendizaje</h3>
                                     <p className="text-gray-400 mb-4">El concurso del SENA es un proceso de mérito que selecciona a los mejores aspirantes para ocupar cargos de carrera en la entidad, fortaleciendo la formación profesional y el desarrollo del talento humano en Colombia.</p>
+                                    <a href="#" className="text-purple-500 font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
+                                </div>
+                            </div>
+                            {/* Tarjeta de Curso 4 */}
+                            <div className="bg-dark-bg rounded-lg border border-gray-700 overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 hover:border-purple-500">
+                                <img src="https://www.registraduria.gov.co/squelettes/images/assetsNewTrip/fondos_oscuros.svg" alt="Logo del SENA" className="w-full h-40 object-contain p-4" />
+                                <div className="p-6">
+                                    <h3 className="text-xl font-bold text-white mb-2">Registraduría Nacional de Colombia</h3>
+                                    <p className="text-gray-400 mb-4">El Concurso Abierto de Méritos 2025 de la Registraduría Nacional abrió inscripciones el 1 de marzo de 2025 y busca proveer miles de cargos de carrera administrativa en diferentes niveles (profesional, técnico y asistencial). Está organizado por la CNSC, con pruebas de conocimientos, competencias y valoración de antecedentes. El objetivo es garantizar el ingreso por mérito a la planta de personal de la Registraduría en todo el país.</p>
                                     <a href="#" className="text-purple-500 font-semibold hover:underline">Ver detalles del simulacro &rarr;</a>
                                 </div>
                             </div>
@@ -255,7 +296,7 @@ const LandingPage = ({ onLoginClick }) => {
                             </p>
                             
                             <a href="https://wa.me/3145566765" className="bg-[#25D366] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#20b85a] transition-colors flex items-center justify-center space-x-2 w-full md:w-auto mx-auto shadow-lg">
-                                <MessageSquareText size={20} />
+                                <FaWhatsapp size={20} /> {/* Ícono de WhatsApp cambiado */}
                                 <span>Activar mi Cuenta (WhatsApp)</span>
                             </a>
                             
@@ -277,25 +318,63 @@ const LandingPage = ({ onLoginClick }) => {
                             ¿Tienes alguna pregunta o quieres colaborar con nosotros? Envíanos un mensaje y te responderemos lo antes posible.
                         </p>
                         <div className="max-w-xl mx-auto bg-dark-card p-8 rounded-lg border border-gray-700">
-                            <form onSubmit={(e) => e.preventDefault()}>
+                            <form onSubmit={handleSubmit}>
                                 <div className="mb-6">
                                     <label htmlFor="name" className="block text-gray-300 font-semibold mb-2">Nombre</label>
-                                    <input type="text" id="name" name="name" className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="Tu nombre completo" required />
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" 
+                                        placeholder="Tu nombre completo" 
+                                        required 
+                                    />
                                 </div>
                                 <div className="mb-6">
                                     <label htmlFor="email" className="block text-gray-300 font-semibold mb-2">Correo Electrónico</label>
-                                    <input type="email" id="email" name="email" className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="tu@email.com" required />
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" 
+                                        placeholder="tu@email.com" 
+                                        required 
+                                    />
                                 </div>
                                 <div className="mb-6">
                                     <label htmlFor="message" className="block text-gray-300 font-semibold mb-2">Mensaje</label>
-                                    <textarea id="message" name="message" rows="5" className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                                    <textarea 
+                                        id="message" 
+                                        name="message"
+                                        rows="5"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500" 
+                                        placeholder="Escribe tu mensaje aquí..." 
+                                        required
+                                    ></textarea>
                                 </div>
                                 <div className="text-center">
-                                    <button type="submit" className="bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-800 transition-colors w-full shadow-lg shadow-purple-500/40">
-                                        Enviar Mensaje
+                                    <button 
+                                        type="submit" 
+                                        disabled={loading}
+                                        className="bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-800 transition-colors w-full shadow-lg shadow-purple-500/40 disabled:opacity-50"
+                                    >
+                                        {loading ? "Enviando..." : "Enviar Mensaje"}
                                     </button>
                                 </div>
                             </form>
+
+                            {/* 👇 Feedback al usuario */}
+                            {feedback && (
+                                <p className={`mt-4 text-center font-semibold ${feedback.type === "success" ? "text-green-400" : "text-red-400"}`}>
+                                    {feedback.message}
+                                </p>
+                            )}
                         </div>
                     </div>
                 </section>
