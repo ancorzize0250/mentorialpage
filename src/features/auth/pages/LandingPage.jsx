@@ -299,7 +299,7 @@ const LandingPage = ({ onLoginClick }) => {
                                 </div>
                                 <div className="bg-gray-800 p-4 rounded-lg flex-1">
                                     <h5 className="font-bold text-purple-400 mb-1">Daviplata</h5>
-                                    <p className="text-white">**23619356454**</p>
+                                    <p className="text-white">**3205016566**</p>
                                 </div>
                             </div>
                             
@@ -402,7 +402,6 @@ const LandingPage = ({ onLoginClick }) => {
                     <div className="flex justify-center space-x-6 mb-8 text-gray-400">
                         <a href="https://www.facebook.com/profile.php?id=61581187410299" className="hover:text-purple-500"><Facebook /></a>
                         <a href="#" className="hover:text-purple-500"><Instagram /></a>
-                        <a href="#" className="hover:text-purple-500"><Linkedin /></a>
                     </div>
                     <p className="text-gray-500">&copy; 2025 Mentorial. Todos los derechos reservados.</p>
                 </div>
