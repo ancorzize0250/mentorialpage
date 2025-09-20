@@ -291,11 +291,11 @@ const LandingPage = ({ onLoginClick }) => {
                             <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 mb-6">
                                 <div className="bg-gray-800 p-4 rounded-lg flex-1">
                                     <h5 className="font-bold text-purple-400 mb-1">Nequi</h5>
-                                    <p className="text-white">**3115108204**</p>
+                                    <p className="text-white">**3205016566**</p>
                                 </div>
                                 <div className="bg-gray-800 p-4 rounded-lg flex-1">
                                     <h5 className="font-bold text-purple-400 mb-1">Bancolombia Ahorros</h5>
-                                    <p className="text-white">**2323243434**</p>
+                                    <p className="text-white">**23619356454**</p>
                                 </div>
                             </div>
                             
